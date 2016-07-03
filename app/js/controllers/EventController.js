@@ -1,5 +1,7 @@
 eventsApp.controller("EventController", 
     function EventController($scope){
+        //$scope.snippet = '<span style="color:red;">Hello All</span>';
+       $scope.boolValue = true;
         $scope.events = {
        name: 'Angular Boot Camp',
        date: '1/1/2013',
@@ -27,7 +29,7 @@ eventsApp.controller("EventController",
            abstract: 'This session will take a closer look at scopes. Learn what they do, how they do it, and how to get them to do it for you.',
            upVoteCount: 0
          },
-         {OLK
+         {
            name: 'Well Behaved Controllers',
            creatorName: 'Jane Doe',
            duration: 4,
@@ -37,5 +39,10 @@ eventsApp.controller("EventController",
          }
        ]
     };
-        
+        $scope.upVoteSession = function(session){
+            session.upVoteCount++;
+        };
+                $scope.downVoteSession = function(session){
+            session.downVoteCount--;
+        };
 });
